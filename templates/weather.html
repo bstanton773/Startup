@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <button id="WeatherButton">Whoa, let's check out some weather folks!</button>
+    <div id="weather"></div>
+
+
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+{% endblock %}
+
+{% block js %}
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'weather.js') }}"></script>
+{% endblock %}
