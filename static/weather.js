@@ -27,16 +27,18 @@ $(document).ready(function () {
 
         function renderChart(forecast){
         console.log('hello')
-        high = []
-        low = []
-        for (i in forecast){
+        var high = []
+        var low = []
+        var date = []
+        for (let i in forecast){
             high.push(parseInt(forecast[i].high))
             low.push(parseInt(forecast[i].low))
+            date.push(parseInt(forecast[i].date))
         }
         console.log(high)
         Highcharts.chart('container', {
             chart: {
-                type: 'line'
+                type: 'column'
             },
             title: {
                 text: '10 days Forecast'
@@ -45,7 +47,7 @@ $(document).ready(function () {
                 text: 'Source: Yahoo!'
             },
             xAxis: {
-                categories: Object.keys(forecast)
+                categories: date
             },
             yAxis: {
                 title: {
