@@ -41,7 +41,7 @@ $(document).ready(function () {
                 type: 'column'
             },
             title: {
-                text: '10 days Forecast'
+                text: '10-Day Forecast'
             },
             subtitle: {
                 text: 'Source: Yahoo!'
@@ -63,9 +63,11 @@ $(document).ready(function () {
                 }
             },
             series: [{
+                color: '#0061ff',
                 name: 'Hi',
                 data: high
             }, {
+                color: '#ff6a00',
                 name: 'Lo',
                 data: low
             }]
