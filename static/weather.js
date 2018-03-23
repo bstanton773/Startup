@@ -7,7 +7,8 @@ $(document).ready(function () {
             for (let i in forecast){
                 console.log(forecast[i].date)
                 $('#weather').append(forecast[i].date + " " + forecast[i].day + " " + forecast[i].high + " " + forecast[i].low + " " + forecast[i].text + " " + '<br>')
-                }
+                };
+             renderChart(forecast)
          };
 
 
@@ -23,5 +24,50 @@ $(document).ready(function () {
         };
 
         $('#WeatherButton').click(weatherButtonClick);
+
+        function renderChart(forecast){
+        console.log('hello')
+        high = []
+        low = []
+        for (i in forecast){
+            high.push(parseInt(forecast[i].high))
+            low.push(parseInt(forecast[i].low))
+        }
+        console.log(high)
+        Highcharts.chart('container', {
+            chart: {
+                type: 'line'
+            },
+            title: {
+                text: '10 days Forecast'
+            },
+            subtitle: {
+                text: 'Source: Yahoo!'
+            },
+            xAxis: {
+                categories: Object.keys(forecast)
+            },
+            yAxis: {
+                title: {
+                    text: 'ABC'
+                }
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: true
+                    },
+                    enableMouseTracking: true
+                }
+            },
+            series: [{
+                name: 'Hi',
+                data: high
+            }, {
+                name: 'Lo',
+                data: low
+            }]
+        });
+        }
 })
 
