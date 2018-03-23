@@ -33,7 +33,7 @@ $(document).ready(function () {
         for (let i in forecast){
             high.push(parseInt(forecast[i].high))
             low.push(parseInt(forecast[i].low))
-            date.push(parseInt(forecast[i].date))
+            date.push(forecast[i].date)
         }
         console.log(high)
         Highcharts.chart('container', {
@@ -51,7 +51,7 @@ $(document).ready(function () {
             },
             yAxis: {
                 title: {
-                    text: 'ABC'
+                    text: 'Temperature (F)'
                 }
             },
             plotOptions: {

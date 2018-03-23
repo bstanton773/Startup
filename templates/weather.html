@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <button id="WeatherButton" class="btn btn-default">Check 10-day forecast</button>
-    <div id="weather"></div>
 
-
+    <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <button id="WeatherButton" class="btn btn-outline-primary">Check 10-day forecast</button>
+                </div>
+            </div>
+    </div>
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <div id="weather"></div>
 {% endblock %}
 
 {% block js %}
